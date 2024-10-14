@@ -12,6 +12,8 @@
 		}
 	],
 	"require": {
-		"ext-pdo": "*"
+		"ext-pdo": "*",
+		"mongodb/mongodb": "^1.20",
+		"ext-mongodb": "*"
 	}
 }
