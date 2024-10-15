@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.myNav {
+    background-color: rgb(28, 99, 149);
+}
+
+.myNav a{
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.formContainer {
+    padding-top: 80px;
+    width: 30%;
+    margin: auto;
+}
+
+.formContainer h1 {
+    margin-bottom: 20px;
+    font-size: 50px;
+    color: blue;
+}
+
+/* form {
+
+} */
+
+form label {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+form .logo {
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+form .flex {
+    display: flex;
+    align-items: center;
+}
+
+form input {
+    width: 50%;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+
+form button {
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 20px;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.addPokemonBtn {
+    background-color: rgb(21, 152, 21);
+}
