@@ -101,7 +101,7 @@ form button {
     padding: 15px;
     left: -2px;
     top: -2px;
-
+    z-index: -1;
 }
 
 .pokemon h2 {
@@ -121,6 +121,10 @@ form button {
     font-size: 18px;
     margin-top: 15px;
     font-weight: bolder;
+}
+
+.pokemon a {
+    z-index: 2;
 }
 
 .eau,
