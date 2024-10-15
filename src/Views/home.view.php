@@ -14,6 +14,7 @@ if(isset($arrayPokemons)){
         <h3>type : <?= $pokemon->getType() ?></h3>
         <h3>Level : <?= $pokemon->getLevel() ?></h3>
         <p>Description du Pokemon : <?= $pokemon->getDescription() ?></p>
+        <a href="/pokemon?id=<?= $pokemon->getId() ?>">Voir plus</a>
     </div>
    
     <?php
