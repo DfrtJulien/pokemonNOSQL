@@ -50,4 +50,43 @@ class PokemonController extends AbstractController
         }
         
     }
+
+    public function updatePokemon()
+    {
+        if(isset($_GET['id'])){
+            $pokemonId = $_GET['id'];
+            $pokemon = new Pokemon($pokemonId, null,null,null,null);
+            $myPokemon = $pokemon->getByid();
+            
+            if(isset($_POST["name"])){
+                $name = htmlspecialchars($_POST["name"]);
+                $type = htmlspecialchars($_POST["type"]);
+                $level = htmlspecialchars($_POST["level"]);
+                $description = htmlspecialchars($_POST["description"]);
+    
+                $this->check('name', $name);
+                $this->check('type', $type);
+                $this->check('level', $level);
+                $this->check('description', $description);
+    
+                if(empty($this->arrayError)){
+    
+                    // Créer un objet Pokemon
+                    $pokemon = new Pokemon($pokemonId, $name, $type, $level, $description);
+    
+                    // Enregistrer le Pokémon dans la base de données
+                    if ($pokemon->update()) {
+                        // Redirection vers une page de succès ou afficher un message de succès
+                        $this->redirectToRoute('/');
+                    } else {
+                        echo "Erreur lors de l'ajout du Pokémon.";
+                    }
+
+          
+        }
+      
+    }
+    require_once (__DIR__ . "/../Views/pokemon/updatePokemon.view.php");
+}
+    }
 }
