@@ -25,8 +25,19 @@ require_once(__DIR__ . "/../partials/head.php");
                 <img src="/public/img/Pokémon_Poison_Type_Icon.svg.png" alt="type poison" class="logo">
             </div>
             </div>
-           
-            <input type="text" name="type">
+            <select name="type" id="">
+                <option value="eau">eau</option>
+                <option value="feu">feu</option>
+                <option value="electrique">electrique</option>
+                <option value="glace">glace</option>
+                <option value="fee">fée</option>
+                <option value="psy">psy</option>
+                <option value="sol">sol</option>
+                <option value="poison">poison</option>
+                <option value="plante">plante</option>
+                <option value="dragon">dragon</option>
+                <option value="insect">insect</option>
+            </select>
             <?php if (isset($this->arrayError['type'])) {
             ?>
                 <p class='text-danger'><?= $this->arrayError['type'] ?></p>
@@ -38,7 +49,6 @@ require_once(__DIR__ . "/../partials/head.php");
             <label for="level">Lvl du Pokémon</label>
             <img src="/public/img/level.png" alt="level ball" class="logo">
             </div>
-           
             <input type="number" name="level">
             <?php if (isset($this->arrayError['level'])) {
             ?>
