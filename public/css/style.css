@@ -55,7 +55,8 @@ form .flex {
     align-items: center;
 }
 
-form input {
+form input,
+form select {
     width: 50%;
     padding: 8px;
     margin-bottom: 20px;
@@ -73,4 +74,128 @@ form button {
 
 .addPokemonBtn {
     background-color: rgb(21, 152, 21);
+}
+
+.pokemonContainer {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pokemon {
+    max-width: 350px;
+    margin: 30px;
+    position: relative;
+}
+
+.pokemon::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.21);
+    padding: 15px;
+    left: -2px;
+    top: -2px;
+
+}
+
+.pokemon h2 {
+    font-size: 30px;
+    margin-top: 5px;
+    font-weight: bolder;
+
+}
+
+.pokemon h3 {
+    font-size: 20px;
+    margin-top: 15px;
+    font-weight: bolder;
+
+}
+.pokemon p {
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: bolder;
+}
+
+.eau,
+.water {
+    background-image: url(/public/img/eauBg.jpg);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.feu,
+.fire {
+    background-image: url(/public/img/fireBg.jpg);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.electric,
+.electrique {
+    background-image: url(/public/img/electricBg.jpg);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.plante,
+.plant {
+    background-image: url(/public/img/planteBg.jpg);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.poison {
+    background-image: url(/public/img/poisonBg.jpg);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.glace {
+    background-image: url(/public/img/glaceBg.jpg);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.insect,
+.insecte {
+    background-image: url(/public/img/insectBg.webp);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.sol,
+.sole {
+    background-image: url(/public/img/solBg.jpg);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.psy {
+    background-image: url(/public/img/psyBg.jpg);
+    padding: 15px;
+    border-radius: 5px;
+    background-position: center;
+    color: white;
+}
+
+.fee,
+.fée,
+.fairy {
+    background-image: url(/public/img/feeBg.jpg);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.dragon {
+    background-image: url(/public/img/dragonBg.jpg);
+    padding: 15px;
+    border-radius: 5px;
+    /* color: white; */
 }
