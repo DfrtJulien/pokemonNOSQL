@@ -10,12 +10,9 @@ class HomeController extends AbstractController
  
     public function index()
         {
-    
                 $pokemon = new Pokemon(null, null, null, null, null);
                 $arrayPokemons = $pokemon->getAll();
-    
-               
-
+            
         require_once(__DIR__ . '/../Views/home.view.php');
     }
 }

@@ -9,7 +9,7 @@ class PokemonController extends AbstractController
 {
     public function addPokemon()
     {
-        if(isset($_POST["name"])){
+        if (isset($_POST["name"])) {
             $name = htmlspecialchars($_POST["name"]);
             $type = htmlspecialchars($_POST["type"]);
             $level = htmlspecialchars($_POST["level"]);
@@ -20,7 +20,7 @@ class PokemonController extends AbstractController
             $this->check('level', $level);
             $this->check('description', $description);
 
-            if(empty($this->arrayError)){
+            if (empty($this->arrayError)) {
 
                 // Créer un objet Pokemon
                 $pokemon = new Pokemon(null, $name, $type, $level, $description);
@@ -33,47 +33,44 @@ class PokemonController extends AbstractController
                     echo "Erreur lors de l'ajout du Pokémon.";
                 }
             }
-
-
         }
-        require_once (__DIR__ . "/../Views/pokemon/createPokemon.view.php");
+        require_once(__DIR__ . "/../Views/pokemon/createPokemon.view.php");
     }
 
     public function showPokemon()
-    {   
-        if(isset($_GET['id'])){
+    {
+        if (isset($_GET['id'])) {
             $pokemonId = $_GET['id'];
 
-            $pokemon = new Pokemon($pokemonId, null,null,null,null);
+            $pokemon = new Pokemon($pokemonId, null, null, null, null);
             $myPokemon = $pokemon->getById();
-            require_once (__DIR__ . "/../Views/pokemon/pokemon.view.php");
+            require_once(__DIR__ . "/../Views/pokemon/pokemon.view.php");
         }
-        
     }
 
     public function updatePokemon()
     {
-        if(isset($_GET['id'])){
+        if (isset($_GET['id'])) {
             $pokemonId = $_GET['id'];
-            $pokemon = new Pokemon($pokemonId, null,null,null,null);
+            $pokemon = new Pokemon($pokemonId, null, null, null, null);
             $myPokemon = $pokemon->getByid();
-            
-            if(isset($_POST["name"])){
+
+            if (isset($_POST["name"])) {
                 $name = htmlspecialchars($_POST["name"]);
                 $type = htmlspecialchars($_POST["type"]);
                 $level = htmlspecialchars($_POST["level"]);
                 $description = htmlspecialchars($_POST["description"]);
-    
+
                 $this->check('name', $name);
                 $this->check('type', $type);
                 $this->check('level', $level);
                 $this->check('description', $description);
-    
-                if(empty($this->arrayError)){
-    
+
+                if (empty($this->arrayError)) {
+
                     // Créer un objet Pokemon
                     $pokemon = new Pokemon($pokemonId, $name, $type, $level, $description);
-    
+
                     // Enregistrer le Pokémon dans la base de données
                     if ($pokemon->update()) {
                         // Redirection vers une page de succès ou afficher un message de succès
@@ -81,12 +78,20 @@ class PokemonController extends AbstractController
                     } else {
                         echo "Erreur lors de l'ajout du Pokémon.";
                     }
-
-          
+                }
+            }
+            require_once(__DIR__ . '/../Views/pokemon/updatePokemon.view.php');
         }
-      
     }
-    require_once (__DIR__ . "/../Views/pokemon/updatePokemon.view.php");
-}
+
+    public function deletePokemon()
+    {
+        if(isset($_POST['id'])){
+            $pokemonId = $_POST['id'];
+            $pokemon = new Pokemon($pokemonId, null,null,null,null);
+            $pokemon->delete();
+            $this->redirectToRoute('/');
+        }
     }
+
 }

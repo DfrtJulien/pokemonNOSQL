@@ -21,6 +21,8 @@ li {
     list-style: none;
 }
 
+
+
 .formContainer {
     padding-top: 80px;
     width: 30%;
@@ -202,4 +204,22 @@ form button {
     padding: 15px;
     border-radius: 5px;
     /* color: white; */
+}
+
+.showMore {
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.updateBtn {
+    text-decoration: none;
+    background-color: rgb(185, 40, 187);
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
 }
